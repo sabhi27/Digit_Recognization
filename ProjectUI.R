@@ -52,7 +52,7 @@
       
       test_reduced <- new_Test_Dataset/255 
       
-      test_reduced <- as.matrix(test_reduced) %*% pca_predictors$rotation[,1:45]
+      test_reduced <- as.matrix(test_reduced) %*% prin_comp$rotation[,1:260]
       
       
       New_Predicted <- predict(model_final,test_reduced,type="class")
@@ -80,3 +80,5 @@
     }, deleteFile = TRUE)
   }
    shinyApp(ui = ui, server = server)
+   
+   
